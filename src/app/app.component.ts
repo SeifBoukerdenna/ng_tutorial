@@ -1,6 +1,7 @@
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { NavbarService } from './navbar.service'; // Adjust the path as needed
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,13 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'routing-app';
+  navbarColor: string = 'initialColor'; // Default color
+
+  constructor(private navbarService: NavbarService) {}
+
+  ngOnInit() {
+    this.navbarService.color$.subscribe(color => this.navbarColor = color);
+  }
 }

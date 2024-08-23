@@ -1,4 +1,8 @@
 <div class="container">
     <h2>Second Component</h2>
     <p>You entered: <strong>{{ inputValue }}</strong></p>
+    <ul>
+        <li *ngFor="let char of getCharacters()">{{ char }}</li>
+    </ul>
+    <button (click)="onButtonClick()">Click me!</button>
 </div>
