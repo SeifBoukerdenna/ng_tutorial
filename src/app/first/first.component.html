@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>First Component</h2>
+    <div class="form-group">
+        <label for="userInput">Enter Some Text:</label>
+        <input id="userInput" [(ngModel)]="inputValue" (ngModelChange)="onInputChange()" name="userInput" type="text"
+            placeholder="Type here..." />
+    </div>
+</div>
